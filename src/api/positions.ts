@@ -1,11 +1,6 @@
 import axios from "axios";
 
-export const getPositions = async (deviceId?: number) => {
-  const url = deviceId
-    ? `http://localhost:3001/positions?deviceId=${deviceId}`
-    : `http://localhost:3001/positions`;
+const API_URL =
+  import.meta.env.VITE_API_URL;
 
-  const response = await axios.get(url);
-
-  return response.data;
-};
+axios.get(`${API_URL}/positions`);

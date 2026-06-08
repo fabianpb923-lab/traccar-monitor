@@ -1,9 +1,6 @@
 import axios from "axios";
 
-export const getDevices = async () => {
-  const response = await axios.get(
-    "http://localhost:3001/devices"
-  );
+const API_URL =
+  import.meta.env.VITE_API_URL;
 
-  return response.data;
-};
+axios.get(`${API_URL}/devices`);
