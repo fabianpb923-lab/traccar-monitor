@@ -8,6 +8,23 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      // Apply saved theme before React mounts to avoid flash
+      (function () {
+        try {
+          var v = localStorage.getItem('traccar_darkMode');
+          if (v === 'true') {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+          } else if (v === 'false') {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

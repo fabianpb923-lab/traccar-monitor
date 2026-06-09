@@ -23,7 +23,7 @@ export const VehicleMap = ({
     const center: LatLngExpression = [latitude, longitude];
 
   return (
-    <div className="h-[600px] w-full overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
+    <div className="h-[640px] w-full overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl">
       <MapContainer
         center={center}
         zoom={15}

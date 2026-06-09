@@ -1,6 +1,7 @@
 import { DeviceSelector } from "../components/DeviceSelector";
 import { StatusCard } from "../components/StatusCard";
 import { VehicleMap } from "../components/VehicleMap";
+import { ThemeToggle } from "../components/ThemeToggle";
 
 import { usePositions } from "../hooks/usePositions";
 import { LoadingSkeleton } from "../components/LoadingSkeleton";
@@ -39,9 +40,10 @@ export const Dashboard = () => {
     <main className="min-h-screen bg-slate-950 p-6">
       <div className="mx-auto max-w-7xl">
 
-        <h1 className="mb-6 text-3xl font-bold text-white">
-          Vehicle Monitor
-        </h1>
+        <div className="mb-6 flex items-center justify-between">
+          <h1 className="text-3xl font-bold text-white">Vehicle Monitor</h1>
+          <ThemeToggle />
+        </div>
 
         <DeviceSelector />
 
