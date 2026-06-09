@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const API_URL =
-  import.meta.env.VITE_API_URL;
+export const getPositions = async (deviceId?: number) => {
+  const url = deviceId
+    ? `https://traccar-monitor.onrender.com/positions?deviceId=${deviceId}`
+    : `https://traccar-monitor.onrender.com/positions`;
 
-axios.get(`${API_URL}/positions`);
+  const response = await axios.get(url);
+
+  return response.data;
+};
